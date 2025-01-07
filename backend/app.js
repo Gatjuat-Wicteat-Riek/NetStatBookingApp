@@ -1,8 +1,25 @@
 import express from "express"
-import { MongoDB, PORT } from "../backend/config.js"
 import mongoose from "mongoose"
-import { MongoOperationTimeoutError } from "mongodb";
+import { MongoDB, PORT } from "../backend/config.js"
+import userAuth from "./routes/auths.route.js"
+import userRoute from "./routes/users.route.js"
+import hostelRoute from "./routes/hostels.route.js"
+import roomRoute from "./routes/rooms.route.js"
+
+
+
 const app = express()
+app.use(express.json())
+
+
+// middleware here
+app.use("/api/auth", userAuth)
+app.use("/api/users", userRoute)
+app.use("/api/hostels", hostelRoute)
+app.use("/api/rooms", roomRoute)
+
+
+
 
 
 
