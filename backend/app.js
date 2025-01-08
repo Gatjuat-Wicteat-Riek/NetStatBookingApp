@@ -1,7 +1,7 @@
 import express from "express"
 import mongoose from "mongoose"
 import { MongoDB, PORT } from "../backend/config.js"
-// import userAuth from "./routes/auths.route.js"
+import userAuth from "./routes/auths.route.js"
 // import userRoute from "./routes/users.route.js"
 import hostelRoute from "./routes/hotels.route.js"
 // import roomRoute from "./routes/rooms.route.js"
@@ -33,9 +33,9 @@ app.use(express.json())
 
 
 // middleware here
-// app.use("/api/auth", userAuth)
 // app.use("/api/users", userRoute)
 app.use("/api/hotels", hostelRoute)
+app.use("/api/auth", userAuth)
     // app.use("/api/rooms", roomRoute)
 
 
