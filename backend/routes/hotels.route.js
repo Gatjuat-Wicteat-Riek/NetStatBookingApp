@@ -1,8 +1,8 @@
 import express from "express"
-import HotelsModal from "../modal/Hotels.modal.js"
 import {
     createHotel,
     deleteHotel,
+    getAllHotels,
     getOneHotel,
     updateHotel
 } from "../controllers/hotels.controllers.js"
@@ -18,9 +18,7 @@ router.delete("/:id", deleteHotel)
     // GETTING SPECIFIC HOTELS
 router.get("/:id", getOneHotel)
     // GETTING ALL THE HOTELS
-router.get("/", async(req, res) => {
-
-})
+router.get("/", getAllHotels)
 
 
 export default router
