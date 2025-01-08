@@ -20,11 +20,9 @@ mongoose
         console.log("Connection failed.", err);
     });
 
-
 mongoose.connection.on("Disconnected", () => {
     console.log("Database Disconnected")
 })
-
 mongoose.connection.on("Connected", () => {
     console.log("Database Connected")
 })
