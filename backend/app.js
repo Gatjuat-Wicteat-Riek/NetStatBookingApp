@@ -1,10 +1,10 @@
 import express from "express"
 import mongoose from "mongoose"
 import { MongoDB, PORT } from "../backend/config.js"
-import userAuth from "./routes/auths.route.js"
-import userRoute from "./routes/users.route.js"
-import hostelRoute from "./routes/hostels.route.js"
-import roomRoute from "./routes/rooms.route.js"
+// import userAuth from "./routes/auths.route.js"
+// import userRoute from "./routes/users.route.js"
+import hostelRoute from "./routes/hotels.route.js"
+// import roomRoute from "./routes/rooms.route.js"
 
 
 
@@ -13,10 +13,10 @@ app.use(express.json())
 
 
 // middleware here
-app.use("/api/auth", userAuth)
-app.use("/api/users", userRoute)
-app.use("/api/hostels", hostelRoute)
-app.use("/api/rooms", roomRoute)
+// app.use("/api/auth", userAuth)
+// app.use("/api/users", userRoute)
+app.use("/api/hotels", hostelRoute)
+    // app.use("/api/rooms", roomRoute)
 
 
 
@@ -43,3 +43,18 @@ mongoose.connection.on("Disconnected", () => {
 mongoose.connection.on("Connected", () => {
     console.log("Database Connected")
 })
+
+
+
+// Error handling here 
+
+app.use((err, req, res, next) => {
+    // Error-handling middleware
+    const statusCode = err.statusCode || 500;
+    const message = err.message || "Internal Server Error";
+    res.status(statusCode).json({
+        success: false,
+        statusCode,
+        message,
+    });
+});
