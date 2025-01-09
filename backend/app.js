@@ -1,10 +1,14 @@
 import express from "express"
+import dotenv from "dotenv"
 import mongoose from "mongoose"
 import { MongoDB, PORT } from "../backend/config.js"
+import cookieParser from "cookie-parser"
 import userAuth from "./routes/auths.route.js"
 // import userRoute from "./routes/users.route.js"
 import hostelRoute from "./routes/hotels.route.js"
 // import roomRoute from "./routes/rooms.route.js"
+
+dotenv.config();
 
 
 // connection to the database
@@ -30,6 +34,7 @@ mongoose.connection.on("Connected", () => {
 
 const app = express()
 app.use(express.json())
+app.use(cookieParser())
 
 
 // middleware here
