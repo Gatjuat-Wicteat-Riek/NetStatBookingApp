@@ -1,58 +1,58 @@
-import express from "express"
-import dotenv from "dotenv"
-import mongoose from "mongoose"
-import { MongoDB, PORT } from "../backend/config.js"
-import cookieParser from "cookie-parser"
-import userAuth from "./routes/auths.route.js"
-// import userRoute from "./routes/users.route.js"
-import hostelRoute from "./routes/hotels.route.js"
-// import roomRoute from "./routes/rooms.route.js"
+import express from "express";
+import dotenv from "dotenv";
+import mongoose from "mongoose";
+import cookieParser from "cookie-parser";
+import { MongoDB, PORT } from "./config.js";
+import userAuth from "./routes/auths.route.js";
+import userRoute from "./routes/users.route.js";
+import hostelRoute from "./routes/hotels.route.js";
+// import roomRoute from "./routes/rooms.route.js";
 
 dotenv.config();
 
+const app = express();
 
-// connection to the database
+// Port configuration
+const port = process.env.PORT || 7000;
+
 mongoose
     .connect(MongoDB)
     .then(() => {
-        console.log("Connection successfully.");
-        app.listen(PORT, () => {
-            console.log("App is running on port:", PORT);
+        console.log("Connected successfully to Database.");
+        app.listen(port, () => {
+            console.log("App is running on port:", port);
         });
     })
     .catch((err) => {
         console.log("Connection failed.", err);
     });
 
-mongoose.connection.on("Disconnected", () => {
-    console.log("Database Disconnected")
-})
-mongoose.connection.on("Connected", () => {
-    console.log("Database Connected")
-})
 
 
-const app = express()
-app.use(express.json())
-app.use(cookieParser())
+// Middleware
+app.use(express.json()); // Parse incoming JSON requests
+app.use(cookieParser()); // Parse cookies
 
+// Routes
+app.use("/api/hotels", hostelRoute);
+app.use("/api/auth", userAuth);
+app.use("/api/users", userRoute);
+// app.use("/api/rooms", roomRoute);
 
-// middleware here
-// app.use("/api/users", userRoute)
-app.use("/api/hotels", hostelRoute)
-app.use("/api/auth", userAuth)
-    // app.use("/api/rooms", roomRoute)
-
-
-// Error handling here 
+// Error handling middleware
 app.use((err, req, res, next) => {
-    // Error-handling middleware
-    const statusCode = err.statusCode || 500;
-    const message = err.message || "Internal Server Error";
-    res.status(statusCode).json({
+    const errorStatus = err.status || 500;
+    const errorMessage = err.message || "Internal Server error!";
+    return res.status(errorStatus).json({
         success: false,
-        statusCode: statusCode,
-        message: message,
-        stack: err.stack
+        status: errorStatus,
+        message: errorMessage,
+        stack: err.stack,
     });
 });
+
+// // Start the server
+// app.listen(port, () => {
+//     connect();
+//     console.log("Connected to backend.");
+// });

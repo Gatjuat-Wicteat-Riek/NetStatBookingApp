@@ -6,7 +6,7 @@ import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 dotenv.config();
 
-const secret_key = process.env.JWT_SECRET || "NetstatBookingApp";
+const secret_key = process.env.JWT_SECRET || "NetstatBookingApp"
 
 // register user to the
 export const registerUser = async(req, res, next) => {
@@ -35,7 +35,8 @@ export const loginUser = async(req, res, next) => {
             user.password
         );
         if (!isPasswordSame) return next(errorHandler(400, "Wrong information"));
-        const token = jwt.sign({ id: user._id, isAdmin: user.isAdmin }, secret_key);
+        const token = jwt.sign({ id: user._id, isAdmin: user.isAdmin }, secret_key, { expiresIn: '5h' });
+
         const { password, isAdmin, ...rest } = user._doc;
         res
             .status(200)

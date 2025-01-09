@@ -1,7 +1,7 @@
-import usersModal from "../modal/users.modal"
+import usersModal from "../modal/users.modal.js"
 // import { errorHandler } from "../utils/error.js"
 
-// creating newHotel
+// creating newUser
 export const createUser = async(req, res, next) => {
     const newUser = new usersModal(req.body)
     try {
@@ -13,7 +13,7 @@ export const createUser = async(req, res, next) => {
 }
 
 
-//updating hotels
+//updating users
 export const updateUser = async(req, res, next) => {
     try {
         const updatedUser = await usersModal.findByIdAndUpdate(req.params.id, { $set: req.body }, { new: true })
@@ -24,7 +24,7 @@ export const updateUser = async(req, res, next) => {
 }
 
 
-// deleting the hostels
+// deleting the users
 export const deleteUser = async(req, res, next) => {
     try {
         await usersModal.findByIdAndDelete(req.params.id)
@@ -35,7 +35,7 @@ export const deleteUser = async(req, res, next) => {
 }
 
 
-// Getting one specific hotel
+// Getting one specific user
 export const getOneUser = async(req, res, next) => {
     try {
         const getUser = await usersModal.findById(req.params.id)
@@ -45,7 +45,7 @@ export const getOneUser = async(req, res, next) => {
     }
 }
 
-// Getting all the hostels
+// Getting all the users
 export const getAllUsers = async(req, res, next) => {
     try {
         const getAllRegisteredUsers = await usersModal.find()

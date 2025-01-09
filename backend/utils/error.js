@@ -1,8 +1,8 @@
 /** @format */
 
-export const errorHandler = (statusCode, message) => {
-    // for handing all the errors in backend
-    const error = new Error();
-    (error.statusCode = statusCode), (error.message = message);
-    return error;
+export const errorHandler = (status, message) => {
+    const err = new Error();
+    err.status = status;
+    err.message = message;
+    return err;
 };
