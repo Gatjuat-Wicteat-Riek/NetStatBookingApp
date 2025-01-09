@@ -7,25 +7,19 @@ import {
     getOneUser,
     getAllUsers,
 } from "../controllers/users.controllers.js";
-import { verifyToken, verifyUsers } from "../utils/verifyUser.js";
+import { verifyToken, verifyUsers, verifyAdmin } from "../utils/verifyUser.js";
 import router from "./auths.route.js";
 
-router.get("/checkauthentication", verifyToken, (req, res, next) => {
-    res.send("Hello from authenticated part");
-});
-router.get("/checkuser/:id", verifyUsers, (req, res, next) => {
-    res.send("hello user, you are logged in and you can delete your account")
-})
 
 // CREATING
-router.post("/", createUser);
+router.post("/", verifyAdmin, createUser);
 // UPDATING
-router.put("/:id", updateUser);
+router.put("/:id", verifyUsers, updateUser);
 // DELETING
-router.delete("/:id", deleteUser);
+router.delete("/:id", verifyUsers, deleteUser);
 // GETTING SPECIFIC HOTELS
-router.get("/:id", getOneUser);
+router.get("/:id", verifyAdmin, getOneUser);
 // GETTING ALL THE HOTELS
-router.get("/", getAllUsers);
+router.get("/", verifyAdmin, getAllUsers);
 
 export default router;

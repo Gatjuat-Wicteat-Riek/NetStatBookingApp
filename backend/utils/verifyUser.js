@@ -2,6 +2,9 @@ import jwt from "jsonwebtoken";
 import { errorHandler } from "./error.js";
 import mongoose from "mongoose";
 const secret_key = process.env.JWT_SECRET || "NetstatBookingApp"
+
+
+
 export const verifyToken = (req, res, next) => {
     const token = req.cookies.access_token;
     if (!token) {
@@ -28,7 +31,7 @@ export const verifyUsers = (req, res, next) => {
         }
     });
 };
-
+// checking admin privilleges
 export const verifyAdmin = (req, res, next) => {
     verifyToken(req, res, next, () => {
         if (req.user.isAdmin) {
