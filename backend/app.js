@@ -2,11 +2,11 @@ import express from "express";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
 import cookieParser from "cookie-parser";
-import { MongoDB, PORT } from "./config.js";
+import { MongoDB } from "./config.js";
 import userAuth from "./routes/auths.route.js";
 import userRoute from "./routes/users.route.js";
 import hostelRoute from "./routes/hotels.route.js";
-// import roomRoute from "./routes/rooms.route.js";
+import roomRoute from "./routes/rooms.route.js";
 
 dotenv.config();
 
@@ -37,7 +37,7 @@ app.use(cookieParser()); // Parse cookies
 app.use("/api/hotels", hostelRoute);
 app.use("/api/auth", userAuth);
 app.use("/api/users", userRoute);
-// app.use("/api/rooms", roomRoute);
+app.use("/api/rooms", roomRoute);
 
 // Error handling middleware
 app.use((err, req, res, next) => {
