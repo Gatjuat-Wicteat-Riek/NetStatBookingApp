@@ -1,4 +1,4 @@
-import "./propertyList.css";
+import "./PropertyList.css";
 
 const PropertyList = () => {
   return (
