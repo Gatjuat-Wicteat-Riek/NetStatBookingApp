@@ -7,6 +7,7 @@ import userAuth from "./routes/auths.route.js";
 import userRoute from "./routes/users.route.js";
 import hostelRoute from "./routes/hotels.route.js";
 import roomRoute from "./routes/rooms.route.js";
+import cors from "cors";
 
 dotenv.config();
 
@@ -32,6 +33,8 @@ mongoose
 // Middleware
 app.use(express.json()); // Parse incoming JSON requests
 app.use(cookieParser()); // Parse cookies
+app.use(express.urlencoded({ extended: false }));
+app.use(cors())
 
 // Routes
 app.use("/api/hotels", hostelRoute);
