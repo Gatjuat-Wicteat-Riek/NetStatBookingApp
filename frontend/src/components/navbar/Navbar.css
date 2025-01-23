@@ -1,9 +1,13 @@
-.navbar {
-  height: 50px;
-  background-color: #003580;
-  display: flex;
-  justify-content: center;
+.navbarItem {
+  height: 50px !important;
+  background-color: #003580 !important;
+  position: sticky;
+  display: flex !important;
+  justify-content: center !important;
+  /*margin-bottom: 50px;*/
+  z-index: 20;
 }
+
 
 .navContainer {
   width: 100%;
@@ -15,7 +19,10 @@
 }
 
 .logo {
-  font-weight: 500;
+  font-weight: bold;
+  color: white;
+  font-size: 30px;
+
 }
 
 .navButton {
