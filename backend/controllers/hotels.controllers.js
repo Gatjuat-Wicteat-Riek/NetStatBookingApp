@@ -50,16 +50,16 @@ export const getOneHotel = async (req, res, next) => {
 export const getAllHotels = async (req, res, next) => {
   const { min, max, ...others } = req.query;
   try {
-    const getHotels = await Hotel.find({
+    const getHotels = await HotelsModal.find({
       ...others,
-      cheapestPrice: { $gt: min | 1, $lt: max || 999 },
-    }).limit(req.query.limit);
+      cheapPrice: { $gt: min | 1, $lt: max || 999 },
+    }).limit(req.query.limit || 10);
     res.status(200).json(getHotels);
   } catch (err) {
     next(err);
   }
-}; }
 };
+
 
 
 // countingByTheCity Name

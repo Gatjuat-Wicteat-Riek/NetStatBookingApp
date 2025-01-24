@@ -26,7 +26,7 @@ const useFetch = (url) => {
         fetchData();
     }, [url]);
 
-    const FetchAgain = async () => {
+    const fetchAgain = async () => {
         setLoading(true);
         try {
             const res = await axiosInstance.get(url);
@@ -38,7 +38,7 @@ const useFetch = (url) => {
         setLoading(false);
     };
 
-    return { data, loading, error, FetchAgain };
+    return { data, loading, error, fetchAgain };
 };
 
 export default useFetch;
