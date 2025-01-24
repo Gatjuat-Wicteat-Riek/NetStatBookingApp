@@ -28,13 +28,18 @@ mongoose
         console.log("Connection failed.", err);
     });
 
-
-
 // Middleware
 app.use(express.json()); // Parse incoming JSON requests
 app.use(cookieParser()); // Parse cookies
 app.use(express.urlencoded({ extended: false }));
-app.use(cors())
+
+// ✅ Correct CORS Configuration
+app.use(cors({
+    origin: "http://localhost:5173", // Allow frontend
+    credentials: true, // Allow cookies and auth headers
+    methods: ["GET", "POST", "PUT", "DELETE"], // Allowed request methods
+    allowedHeaders: ["Content-Type", "Authorization"], // Allowed headers
+}));
 
 // Routes
 app.use("/api/hotels", hostelRoute);
@@ -53,9 +58,3 @@ app.use((err, req, res, next) => {
         stack: err.stack,
     });
 });
-
-// // Start the server
-// app.listen(port, () => {
-//     connect();
-//     console.log("Connected to backend.");
-// });

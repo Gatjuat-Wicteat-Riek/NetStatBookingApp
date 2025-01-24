@@ -1,10 +1,10 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleXmark } from "@fortawesome/free-solid-svg-icons";
 
-import "./reserve.css";
-import useFetch from "../../hooks/useFetch";
+import "./Reserve.css";
+import useFetch from "../../hooks/useFetch.js";
 import { useContext, useState } from "react";
-import { SearchContext } from "../../context/SearchContext";
+import {SearchContext} from "../context/SearchContext.jsx";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
@@ -63,7 +63,10 @@ const Reserve = ({ setOpen, hotelId }) => {
             );
             setOpen(false);
             navigate("/");
-        } catch (err) {}
+        } catch (err) {
+            console.log(err)
+
+        }
     };
     return (
         <div className="reserve">

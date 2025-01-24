@@ -4,13 +4,17 @@ import { BrowserRouter as Router } from "react-router-dom";
 import "./index.css";
 import App from "./App.jsx";
 import {SearchContextProvider} from "./components/context/SearchContext.jsx";
+import {AuthContextProvider} from "./components/context/AuthContext.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-      <SearchContextProvider>
-        <Router>
-          <App />
-        </Router>
-      </SearchContextProvider>
+      <AuthContextProvider>
+          <SearchContextProvider>
+              <Router>
+                  <App />
+              </Router>
+          </SearchContextProvider>
+      </AuthContextProvider>
+
   </StrictMode>
 );

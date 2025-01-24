@@ -1,4 +1,5 @@
 import HotelsModal from "../modal/Hotels.modal.js";
+import RoomsModal from "../modal/Rooms.modal.js";
 // import { errorHandler } from "../utils/error.js"
 
 // creating newHotel
@@ -92,6 +93,22 @@ export const countByType = async (req, res, next) => {
       { type: "villas", count: villaCount },
       { type: "cabins", count: cabinCount },
     ]);
+  } catch (err) {
+    next(err);
+  }
+};
+
+
+// hotel rooms available
+export const getHotelRooms = async (req, res, next) => {
+  try {
+    const hotel = await HotelsModal.findById(req.params.id);
+    const list = await Promise.all(
+        hotel.rooms.map((room) => {
+          return RoomsModal.findById(room);
+        })
+    );
+    res.status(200).json(list)
   } catch (err) {
     next(err);
   }
