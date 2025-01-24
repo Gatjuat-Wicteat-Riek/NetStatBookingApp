@@ -86,16 +86,24 @@ const Header = ({ type }) => {
           {type !== "list" && (
               <>
                 <h1 className="headerTitle">
-                  A lifetime of discounts? It's Genius.
+                  Discover Endless Adventures with Exclusive Discounts – It's Brilliant!
                 </h1>
+
                 <p className="headerDesc">
-                  Get rewarded for your travels – unlock instant savings of 10% or
-                  more with a free Lamabooking account
+                  Explore the beauty of East Africa with <span className="TLogo">
+                      <span className="col-f">Chan</span>
+                      <span className="col-s">Yong</span>
+                      <span className="col-e">Booking</span>
+                     </span>! Unlock exclusive savings
+                  of 10% or more on stays
+                  in <span className="textHead">Juba, Nairobi, Kampala, Dar es Salaam, Kigali</span>, and beyond.
+                  Your next adventure starts here!
                 </p>
+
                 {!user && <button className="headerBtn">Sign in / Register</button>}
                 <div className="headerSearch">
                   <div className="headerSearchItem">
-                    <FontAwesomeIcon icon={faBed} className="headerIcon" />
+                    <FontAwesomeIcon icon={faBed} className="headerIcon"/>
                     <input
                         type="text"
                         placeholder="Where are you going?"
@@ -104,7 +112,7 @@ const Header = ({ type }) => {
                     />
                   </div>
                   <div className="headerSearchItem">
-                    <FontAwesomeIcon icon={faCalendarDays} className="headerIcon" />
+                    <FontAwesomeIcon icon={faCalendarDays} className="headerIcon"/>
                     <span
                         onClick={() => setOpenDate(!openDate)}
                         className="headerSearchText"
@@ -124,7 +132,7 @@ const Header = ({ type }) => {
                     )}
                   </div>
                   <div className="headerSearchItem">
-                    <FontAwesomeIcon icon={faPerson} className="headerIcon" />
+                    <FontAwesomeIcon icon={faPerson} className="headerIcon"/>
                     <span
                         onClick={() => setOpenOptions(!openOptions)}
                         className="headerSearchText"

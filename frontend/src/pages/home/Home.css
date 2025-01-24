@@ -1,3 +1,21 @@
+:root {
+  --bg-color: #fdfdfd;
+  --text-color: #333;
+  --main-color: #754ef9;
+  --white-color: #fdfdfd;
+  --shadow-color: rgba(0, 0, 0, 0.2);
+  --footer-hover: #5ad1cd;
+  --header-color: #660c9d;
+  --color-red: #f5311c;
+  --color-logo: #ff5400;
+  --color-logo1: #06d6a0;
+  --color-logo2: #8338ec;
+  --footer-text: #444;
+  --footer-hover-text: #fff;
+  --footer-bg: #f8f9fa;
+  --footer-border: #ddd;
+}
+
 .homeContainer {
   margin-top: 50px;
   display: flex;

@@ -1,3 +1,22 @@
+:root {
+  --bg-color: #fdfdfd;
+  --text-color: #333;
+  --main-color: #754ef9;
+  --white-color: #fdfdfd;
+  --shadow-color: rgba(0, 0, 0, 0.2);
+  --footer-hover: #5ad1cd;
+  --header-color: #660c9d;
+  --color-red: #f5311c;
+  --color-logo: #ff5400;
+  --color-logo1: #06d6a0;
+  --color-logo2: #8338ec;
+  --footer-text: #444;
+  --footer-hover-text: #fff;
+  --footer-bg: #f8f9fa;
+  --footer-border: #ddd;
+  --hover-bg: #f2f2f2;
+}
+
 .header {
   background-color: #003580;
   color: white;
@@ -16,6 +35,21 @@
   margin: 20px 0px 0px 0px;
 }
 
+.col-f {
+  color: var(--color-logo2);
+  font-size: 14px;
+}
+
+.col-s {
+  color: var(--color-logo);
+  font-size: 14px;
+}
+
+.col-e {
+  color: var(--color-logo1);
+  font-size: 14px;
+}
+
 .headerList {
   display: flex;
   gap: 40px;
@@ -26,31 +60,68 @@
   display: flex;
   align-items: center;
   gap: 10px;
+  padding: 10px;
+  border-radius: 20px;
+  cursor: pointer;
+  background-color: var(--white-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.headerListItem:hover {
+  background-color: var(--hover-bg);
+  transform: scale(1.05);
 }
 
 .headerListItem.active {
-  border: 1px solid white;
-  padding: 10px;
-  border-radius: 20px;
+  background-color: var(--main-color);
+  color: white;
+}
+
+.headerListItem span {
+  font-size: 16px;
+  font-weight: 600;
 }
 
 .headerDesc {
   margin: 20px 0px;
+  font-size: 14px;
 }
 
 .headerBtn {
-  background-color: #0071c2;
+  background-color: var(--color-logo);
   color: white;
   font-weight: 500;
   border: none;
-  padding: 10px;
+  padding: 12px 20px;
+  border-radius: 5px;
   cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
+
+/* Hover Effect */
+.headerBtn:hover {
+  background-color: var(--color-logo2);
+  transform: scale(1.05);
+}
+
+/* Focus Effect */
+.headerBtn:focus {
+  outline: none;
+  box-shadow: 0px 0px 5px rgba(0, 113, 194, 0.6);
+}
+
+/* Disabled button styling */
+.headerBtn:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
 
 .headerSearch {
   height: 30px;
   background-color: white;
-  border: 3px solid #febb02;
+  border: 3px solid var(--color-logo2);
   display: flex;
   align-items: center;
   justify-content: space-around;
