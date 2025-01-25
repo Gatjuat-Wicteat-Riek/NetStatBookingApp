@@ -1,3 +1,22 @@
+:root {
+  --bg-color: #fdfdfd;
+  --text-color: #333;
+  --main-color: #754ef9;
+  --white-color: #fdfdfd;
+  --shadow-color: rgba(0, 0, 0, 0.2);
+  --footer-hover: #5ad1cd;
+  --header-color: #660c9d;
+  --color-red: #f5311c;
+  --color-logo: #ff5400;
+  --color-logo1: #06d6a0;
+  --color-logo2: #8338ec;
+  --footer-text: #444;
+  --footer-hover-text: #fff;
+  --footer-bg: #f8f9fa;
+  --footer-border: #ddd;
+}
+
+
 .searchItem {
   border: 1px solid lightgray;
   padding: 10px;
@@ -23,7 +42,7 @@
 
 .siTitle {
   font-size: 20px;
-  color: #0071c2;
+  color: var(--color-logo2);
 }
 
 .siDistance {
@@ -32,16 +51,19 @@
 
 .siTaxiOp {
   font-size: 12px;
-  background-color: #008009;
+  background-color: var(--color-logo1);
   color: white;
   width: max-content;
-  padding: 3px;
+  padding: 5px;
   border-radius: 5px;
 }
-
+.siDist{
+  color: var(--color-logo);
+}
 .siSubtitle {
   font-size: 12px;
   font-weight: bold;
+  color: #444444;
 }
 
 .siFeatures {
@@ -50,13 +72,13 @@
 
 .siCancelOp {
   font-size: 12px;
-  color: #008009;
+  color: var(--color-logo2);
   font-weight: bold;
 }
 
 .siCancelOpSubtitle {
   font-size: 12px;
-  color: #008009;
+  color: var(--color-logo);
 }
 
 .siDetails {
@@ -75,7 +97,7 @@
   font-weight: 500;
 }
 .siRating > button {
-  background-color: #003580;
+  background-color: var(--color-logo2);
   color: white;
   padding: 5px;
   font-weight: bold;
@@ -91,19 +113,32 @@
 
 .siPrice {
   font-size: 24px;
+  color: var(--color-logo1);
 }
 
 .siTaxOp {
   font-size: 12px;
-  color: gray;
+  color: var(--color-logo)
 }
 
 .siCheckButton {
-  background-color: #0071c2;
+  background-color: var(--color-logo2);
   color: white;
   font-weight: bold;
-  padding: 10px 5px;
+  padding: 12px 16px;
   border: none;
   cursor: pointer;
-  border-radius: 5px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.siCheckButton:hover {
+  background-color: var(--color-logo1);
+  transform: scale(1.05);
+}
+
+.siCheckButton:active {
+  background-color: var(--color-logo2);
+  transform: scale(0.98);
 }

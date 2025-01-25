@@ -8,7 +8,7 @@ const SearchItem = ({ item: {_id, cheapPrice, desc, distance, name, photos, rati
         <img src={photos[0]} alt="" className="siImg" />
         <div className="siDesc">
           <h1 className="siTitle">{name}</h1>
-          <span className="siDistance">{distance}m from center</span>
+            <span className="siDistance"><span className="siDist">{distance}</span>m from center</span>
           <span className="siTaxiOp">Free airport taxi</span>
           <span className="siSubtitle">
           Spacious Villas, Apartments, and Hotels with Air Conditioning

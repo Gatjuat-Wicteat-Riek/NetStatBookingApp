@@ -47,6 +47,7 @@
 
 .hotelTitle {
   font-size: 24px;
+  color: var(--color-logo2);
 }
 
 .hotelAddress {
@@ -96,6 +97,7 @@
 .hotelDesc {
   font-size: 14px;
   margin-top: 20px;
+  color: #444444;
 }
 
 .hotelDetailsPrice {
@@ -117,15 +119,34 @@
 .hotelDetailsPrice > h2 {
   font-weight: 300;
 }
+
 .hotelDetailsPrice > button {
   border: none;
-  padding: 10px 20px;
+  padding: 12px 25px;
   background-color: var(--color-logo1);
   color: white;
   font-weight: bold;
   cursor: pointer;
-  border-radius: 5px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
+
+.hotelDetailsPrice > button:hover {
+  background-color: var(--color-logo2);
+  transform: scale(1.05);
+}
+
+.hotelDetailsPrice > button:active {
+  background-color: var(--color-logo1);
+  transform: scale(0.98);
+}
+
+.hotelDetailsPrice > button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(131, 56, 236, 0.5);
+}
+
 
 .slider {
   position: sticky;

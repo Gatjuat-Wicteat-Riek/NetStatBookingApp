@@ -48,3 +48,9 @@
   font-size: 14px;
   font-weight: 300;
 }
+.pType{
+  color: var(--color-logo1);
+}
+.pCount{
+  color: var(--color-logo);
+}
