@@ -1,3 +1,22 @@
+
+:root {
+    --bg-color: #fdfdfd;
+    --text-color: #333;
+    --main-color: #754ef9;
+    --white-color: #fdfdfd;
+    --shadow-color: rgba(0, 0, 0, 0.2);
+    --footer-hover: #5ad1cd;
+    --header-color: #660c9d;
+    --color-red: #f5311c;
+    --color-logo: #ff5400;
+    --color-logo1: #06d6a0;
+    --color-logo2: #8338ec;
+    --footer-text: #444;
+    --footer-hover-text: #fff;
+    --footer-bg: #f8f9fa;
+    --footer-border: #ddd;
+}
+
 .reserve {
     width: 100vw;
     height: 100vh;
@@ -11,7 +30,7 @@
 }
 
 .rContainer {
-    background-color: white;
+    background-image: linear-gradient(to top, #d5dee7 0%, #ffafbd 0%, #c9ffbf 100%);
     padding: 20px;
     position: relative;
 }
@@ -29,7 +48,11 @@
     gap: 50px;
     padding: 20px;
 }
-
+.rSelect{
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--color-logo);
+}
 .rInfo {
     display: flex;
     flex-direction: column;
@@ -38,10 +61,12 @@
 
 .rTitle {
     font-weight: 500;
+    color: var(--color-logo1);
 }
 
 .rDesc {
     font-weight: 300;
+    color: var(--color-logo2);
 }
 
 .rMax {
@@ -50,6 +75,7 @@
 
 .rPrice {
     font-weight: 500;
+    color: var(--color-logo);
 }
 
 .rSelectRooms{
@@ -67,12 +93,41 @@
 
 .rButton {
     border: none;
-    padding: 10px 20px;
-    background-color: #0071c2;
+    padding: 12px 24px;
+    background: var(--color-logo1);
     color: white;
+    font-size: 16px;
     font-weight: bold;
     cursor: pointer;
-    border-radius: 5px;
+    border-radius: 8px;
     width: 100%;
     margin-top: 20px;
+    box-shadow: 0 4px 10px rgba(0, 113, 194, 0.3);
+    transition: all 0.3s ease-in-out;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Hover Effect */
+.rButton:hover {
+    background: var(--color-logo2);
+    transform: translateY(-2px);
+}
+
+/* Active (Click) Effect */
+.rButton:active {
+     transform: translateY(1px);
+     background: var(--color-logo2);
+ }
+
+/* Disabled State */
+.rButton:disabled {
+    background: gray;
+    cursor: not-allowed;
+    box-shadow: none;
+    opacity: 0.6;
 }

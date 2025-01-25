@@ -76,7 +76,7 @@ const Reserve = ({ setOpen, hotelId }) => {
                     className="rClose"
                     onClick={() => setOpen(false)}
                 />
-                <span>Select your rooms:</span>
+                <span className="rSelect">Select your rooms:</span>
                 {data.map((item) => (
                     <div className="rItem" key={item._id}>
                         <div className="rItemInfo">
