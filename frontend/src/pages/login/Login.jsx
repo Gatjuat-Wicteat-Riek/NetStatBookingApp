@@ -3,6 +3,7 @@ import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../components/context/AuthContext.jsx";
 import "./Login.css";
+import img from "./img.png"
 
 const Login = () => {
     const [credentials, setCredentials] = useState({
@@ -46,6 +47,8 @@ const Login = () => {
 
 
     return (
+        <>
+            <img src={img} alt="Login" className="img" />
         <div className="login">
             <div className="lContainer">
                 <input
@@ -70,6 +73,7 @@ const Login = () => {
                 {error && <span className="error">{error}</span>}
             </div>
         </div>
+        </>
     );
 };
 

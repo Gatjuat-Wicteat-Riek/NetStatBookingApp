@@ -48,6 +48,12 @@
 .fHead{
   color: var(--color-logo2)
 }
+.fSpan{
+  color: #ff006e;
+}
+.fHeadTitle{
+  color: var(--color-logo);
+}
 .featuredTitles {
   position: absolute;
   bottom: 20px;
@@ -79,11 +85,11 @@
 }
 
 .featured .swiper-pagination-bullet {
-  background-color: #007bff;
+  background-color: var(--color-logo);
   opacity: 0.8;
 }
 
 .featured .swiper-pagination-bullet-active {
-  background-color: #0056b3;
+  background-color: var(--color-logo2);
   opacity: 1;
 }

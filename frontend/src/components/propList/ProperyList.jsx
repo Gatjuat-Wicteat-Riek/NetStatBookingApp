@@ -5,11 +5,11 @@ const PropertyList = () => {
     const { data, loading, error } = useFetch("/hotels/countByType");
 
     const images = [
-        "https://cf.bstatic.com/xdata/images/xphoto/square300/57584488.webp?k=bf724e4e9b9b75480bbe7fc675460a089ba6414fe4693b83ea3fdd8e938832a6&o=",
-        "https://cf.bstatic.com/static/img/theme-index/carousel_320x240/card-image-apartments_300/9f60235dc09a3ac3f0a93adbc901c61ecd1ce72e.jpg",
-        "https://cf.bstatic.com/static/img/theme-index/carousel_320x240/bg_resorts/6f87c6143fbd51a0bb5d15ca3b9cf84211ab0884.jpg",
-        "https://cf.bstatic.com/static/img/theme-index/carousel_320x240/card-image-villas_300/dd0d7f8202676306a661aa4f0cf1ffab31286211.jpg",
-        "https://cf.bstatic.com/static/img/theme-index/carousel_320x240/card-image-chalet_300/8ee014fcc493cb3334e25893a1dee8c6d36ed0ba.jpg",
+        "https://i.pinimg.com/236x/3e/35/95/3e359520c92ed74a2e012808be94b9d6.jpg",
+        "https://i.pinimg.com/236x/0d/75/5e/0d755e0e69543cca6739f9dc65f8e4a6.jpg",
+        "https://i.pinimg.com/236x/ef/c6/62/efc662ad7d783e588fcf5f8a2f28693f.jpg",
+        "https://i.pinimg.com/236x/01/ea/a9/01eaa957af4312b0f2124026303dd52b.jpg",
+        "https://i.pinimg.com/236x/9b/88/38/9b88386fe3247c82a88dd1db31249fb6.jpg",
     ];
     return (
         <div className="pList">
