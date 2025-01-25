@@ -1,0 +1,88 @@
+:root {
+    --bg-color: #fdfdfd;
+    --text-color: #333;
+    --main-color: #754ef9;
+    --white-color: #fdfdfd;
+    --shadow-color: rgba(0, 0, 0, 0.2);
+    --footer-hover: #5ad1cd;
+    --header-color: #660c9d;
+    --color-red: #f5311c;
+    --color-logo: #ff5400;
+    --color-logo1: #06d6a0;
+    --color-logo2: #8338ec;
+    --footer-text: #444;
+    --footer-hover-text: #fff;
+    --footer-bg: #f8f9fa;
+    --footer-border: #ddd;
+}
+
+.registerContainer {
+    width: 100%;
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 40px;
+    background-image: linear-gradient(to top, #d9afd9 0%, #97d9e1 100%);
+    border-radius: 10px;
+    box-shadow: 0 6px 15px var(--shadow-color);
+}
+
+.registerTitle {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 28px;
+    font-weight: 600;
+    color: var(--header-color);
+}
+.rImg{
+    width: 100%;
+    height: 300px;
+}
+.registerForm {
+    display: flex;
+    flex-direction: column;
+}
+
+.registerInputContainer {
+    margin-bottom: 20px;
+}
+
+.registerInputContainer label {
+    font-size: 16px;
+    color: var(--text-color);
+    margin-bottom: 8px;
+}
+
+.registerInputContainer input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    color: var(--text-color);
+    transition: border 0.3s ease;
+}
+
+.registerInputContainer input:focus {
+    border: 1px solid var(--main-color);
+    outline: none;
+}
+
+.registerBtn {
+    background-color: var(--main-color);
+    color: white;
+    padding: 15px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s ease-in-out;
+}
+
+.registerBtn:hover {
+    background-color: var(--color-logo1);
+    transform: scale(1.05);
+}
+
+.registerBtn:active {
+    transform: scale(1);
+}
