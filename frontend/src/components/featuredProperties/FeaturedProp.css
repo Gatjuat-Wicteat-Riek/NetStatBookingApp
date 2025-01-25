@@ -5,7 +5,9 @@
   justify-content: space-between;
   gap: 20px;
 }
-
+.fPrice{
+  color: var(--color-logo);
+}
 .fpItem {
   flex: 1;
   gap: 10px;
@@ -20,12 +22,14 @@
 }
 
 .fpName {
-  color: #333;
+  color: var(--color-logo);
   font-weight: bold;
+
 }
 
 .fpCity {
   font-weight: 300;
+  color: var(--color-logo2);
 }
 
 .fpPrice {
