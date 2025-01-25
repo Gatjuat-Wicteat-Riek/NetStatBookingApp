@@ -55,8 +55,19 @@
 
 .navButton {
   margin-left: 20px;
-  border: none;
-  padding: 5px 10px;
+  border: 2px solid #003580;
+  padding: 8px 15px;
   cursor: pointer;
-  color: #003580;
+  color: var(--text-color);
+  background-color: var(--color-logo1);
+  border-radius: 10px;
+  font-weight: bold;
+  transition: all 0.3s ease;
 }
+
+.navButton:hover {
+  background-color: var(--color-logo2);
+  color: white;
+  transform: scale(1.05);
+}
+

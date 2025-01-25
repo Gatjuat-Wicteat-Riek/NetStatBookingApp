@@ -1,3 +1,21 @@
+:root {
+  --bg-color: #fdfdfd;
+  --text-color: #333;
+  --main-color: #754ef9;
+  --white-color: #fdfdfd;
+  --shadow-color: rgba(0, 0, 0, 0.2);
+  --footer-hover: #5ad1cd;
+  --header-color: #660c9d;
+  --color-red: #f5311c;
+  --color-logo: #ff5400;
+  --color-logo1: #06d6a0;
+  --color-logo2: #8338ec;
+  --footer-text: #444;
+  --footer-hover-text: #fff;
+  --footer-bg: #f8f9fa;
+  --footer-border: #ddd;
+}
+
 .listContainer {
   display: flex;
   justify-content: center;
@@ -13,7 +31,7 @@
 
 .listSearch {
   flex: 1;
-  background-color: #febb02;
+  background-color: var(--color-logo1);
   padding: 10px;
   border-radius: 10px;
   position: sticky;
@@ -70,7 +88,7 @@
 
 .listSearch > button {
   padding: 10px;
-  background-color: #0071c2;
+  background-color: var(--color-logo2);
   color: white;
   border: none;
   width: 100%;
@@ -80,4 +98,26 @@
 
 .listResult {
   flex: 3;
+}
+
+.Lsearchbtn {
+  padding: 15px 25px;
+  background-color: var(--color-logo2);
+  color: white;
+  border: none;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  width: 100%;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.Lsearchbtn:hover {
+  background-color: var(--color-logo);
+  transform: scale(1.05);
+}
+
+.Lsearchbtn:active {
+  background-color: var(--color-logo);
 }

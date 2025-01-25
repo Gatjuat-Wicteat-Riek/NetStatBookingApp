@@ -105,11 +105,11 @@ const Hotel = () => {
                   <span>{data.address}</span>
                 </div>
                 <span className="hotelDistance">
-              Excellent location – {data.distance}m from center
+              Prime location – Only {data.distance} meters from the city center!
             </span>
                 <span className="hotelPriceHighlight">
-              Book a stay over ${data.cheapPrice} at this property and get a
-              free airport taxi
+              Book your stay for just ${data.cheapPrice} at this property and
+                  enjoy a complimentary airport taxi ride!
             </span>
                 <div className="hotelImages">
                   {data.photos?.map((photo, i) => (
@@ -131,11 +131,11 @@ const Hotel = () => {
                   <div className="hotelDetailsPrice">
                     <h1>Perfect for a {days}-night stay!</h1>
                     <span>
-                  Located in the real heart of Krakow, this property has an
-                  excellent location score of 9.8!
+                      Located in the vibrant heart of East Africa's best cities, this property
+                      boasts an outstanding location with an impressive score of 9.8
                 </span>
                     <h2>
-                      <b>${days * data.cheapPrice * options.room}</b> ({days}{" "}
+                      <b>${days * data.cheapPrice * Number(options.rooms)}</b> ({days}{" "})
                       nights)
                     </h2>
                     <button onClick={handleClick}>Reserve or Book Now!</button>

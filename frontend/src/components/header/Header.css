@@ -142,6 +142,9 @@
   align-items: center;
   gap: 10px;
 }
+.headerSearchItem input ::placeholder {
+  font-weight: bold;
+}
 
 .headerSearchInput {
   border: none;

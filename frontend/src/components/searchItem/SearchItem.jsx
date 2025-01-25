@@ -11,12 +11,12 @@ const SearchItem = ({ item: {_id, cheapPrice, desc, distance, name, photos, rati
           <span className="siDistance">{distance}m from center</span>
           <span className="siTaxiOp">Free airport taxi</span>
           <span className="siSubtitle">
-          Studio Apartment with Air conditioning
+          Spacious Villas, Apartments, and Hotels with Air Conditioning
         </span>
           <span className="siFeatures">{desc}</span>
-          <span className="siCancelOp">Free cancellation </span>
+          <span className="siCancelOp">Free cancellation anytime </span>
           <span className="siCancelOpSubtitle">
-          You can cancel later, so lock in this great price today!
+           Cancel anytime, so secure this great price now!
         </span>
         </div>
         <div className="siDetails">

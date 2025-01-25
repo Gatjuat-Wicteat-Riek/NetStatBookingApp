@@ -100,7 +100,6 @@ const Header = ({ type }) => {
                   Your next adventure starts here!
                 </p>
 
-                {!user && <button className="headerBtn">Sign in / Register</button>}
                 <div className="headerSearch">
                   <div className="headerSearchItem">
                     <FontAwesomeIcon icon={faBed} className="headerIcon"/>
