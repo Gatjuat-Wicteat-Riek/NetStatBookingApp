@@ -14,7 +14,7 @@ const Featured = () => {
         AOS.init({ duration: 1000, once: true });
     }, []);
     const { data, loading, error } = useFetch(
-        "/hotels/countByCity?cities=berlin,madrid,london"
+        "/hotels/countByCity?cities=juba,nairobi,daressalaam,kampala,kigali,zanzibar,mombasa"
     );
 
     return (
@@ -58,7 +58,7 @@ const Featured = () => {
                                 />
                                 <div className="featuredTitles">
                                     <h1 className="fHeadTitle">Nairobi</h1>
-                                    <h2><span className="fSpan">{data[1]}</span> properties</h2>
+                                    <h2><span className="fSpan">{data[1]} </span> properties</h2>
                                 </div>
                             </div>
                         </SwiperSlide>
@@ -72,7 +72,7 @@ const Featured = () => {
                                 />
                                 <div className="featuredTitles">
                                     <h1 className="fHeadTitle">Dar es Salaam</h1>
-                                    <h2><span className="fSpan">{data[2]}</span> properties</h2>
+                                    <h2><span className="fSpan">{data[2]} </span> properties</h2>
                                 </div>
                             </div>
                         </SwiperSlide>
@@ -85,7 +85,7 @@ const Featured = () => {
                                 />
                                 <div className="featuredTitles">
                                     <h1 className="fHeadTitle">Kampala</h1>
-                                    <h2><span className="fSpan">{data[3]}</span>properties</h2>
+                                    <h2><span className="fSpan">{data[3]} </span> properties</h2>
                                 </div>
                             </div>
                         </SwiperSlide>
@@ -111,7 +111,7 @@ const Featured = () => {
                                 />
                                 <div className="featuredTitles">
                                     <h1 className="fHeadTitle">Zanibar</h1>
-                                    <h2><span className="fSpan">{data[4]}</span> properties</h2>
+                                    <h2><span className="fSpan">{data[5]}</span> properties</h2>
                                 </div>
                             </div>
                         </SwiperSlide>
@@ -124,7 +124,7 @@ const Featured = () => {
                                 />
                                 <div className="featuredTitles">
                                     <h1 className="fHeadTitle">Mombasa</h1>
-                                    <h2><span className="fSpan">{data[4]}</span> properties</h2>
+                                    <h2><span className="fSpan">{data[6]}</span> properties</h2>
                                 </div>
                             </div>
                         </SwiperSlide>
